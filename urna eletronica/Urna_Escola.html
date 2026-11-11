@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Urna Escolar</title>
+    <link rel="stylesheet" href="Urna_Ecola.css">
+    <script src="Urna_Escolar.js" defer></script>
+</head>
+<body>
+    <main class="painel">
+        <h1>Urna Eletrônica Escolar</h1>
+        <h2>Eleição Grêmio 2026</h2>
+
+        <details class="ajuda">
+            <summary>Ajuda para usar a urna</summary>
+            <ol>
+                <li>Informe seu nome e código de aluno para avançar.</li>
+                <li>Selecione uma chapa e escolha “Revisar voto”.</li>
+                <li>Na revisão, confirme a chapa ou volte para corrigir ou cancelar.</li>
+                <li>Depois de confirmar, a votação é encerrada nesta demonstração.</li>
+            </ol>
+            <p>Esta demonstração salva neste navegador os nomes e códigos de quem votou e a contagem agregada por chapa, sem um campo que associe diretamente cada identidade à sua escolha. Isso não garante sigilo eleitoral: os dados locais podem ser vistos, alterados ou correlacionados por quem usa este navegador. Use apenas dados fictícios; não use em uma eleição real.</p>
+        </details>
+
+        <p id="mensagem-persistencia" class="erro-campo" role="alert" aria-live="assertive"></p>
+
+        <section id="etapa-identificacao" aria-labelledby="titulo-identificacao">
+            <h3 id="titulo-identificacao">Etapa 1: identificação do aluno</h3>
+            <form id="form-identificacao" novalidate>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" aria-describedby="erro-nome" required>
+                <p id="erro-nome" class="erro-campo" role="alert" aria-live="assertive"></p>
+
+                <label for="codigoAluno">Código do aluno:</label>
+                <input type="text" id="codigoAluno" name="codigoAluno" placeholder="Digite seu código" aria-describedby="erro-codigo" required>
+                <p id="erro-codigo" class="erro-campo" role="alert" aria-live="assertive"></p>
+
+                <button type="submit">Continuar para votação</button>
+                <p id="mensagem-identificacao" class="mensagem" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+
+        <section id="etapa-votacao" aria-labelledby="titulo-votacao" hidden>
+            <h3 id="titulo-votacao">Etapa 2: escolha uma chapa</h3>
+            <p>Selecione uma das chapas disponíveis:</p>
+            <form id="form-votacao" novalidate>
+                <label for="chapa">Chapa:</label>
+                <select id="chapa" name="chapa" aria-describedby="erro-chapa" required>
+                    <option value="">Selecione uma chapa</option>
+                    <option value="1">Chapa 1</option>
+                    <option value="2">Chapa 2</option>
+                    <option value="3">Chapa 3</option>
+                    <option value="4">Chapa 4</option>
+                    <option value="5">Chapa 5</option>
+                    <option value="6">Chapa 6</option>
+                    <option value="7">Chapa 7</option>
+                    <option value="8">Chapa 8</option>
+                </select>
+                <p id="erro-chapa" class="erro-campo" role="alert" aria-live="assertive"></p>
+                <button type="submit">Revisar voto</button>
+                <button id="voltar-identificacao" type="button">Voltar para identificação</button>
+                <p id="mensagem-voto" class="mensagem" role="status" aria-live="polite"></p>
+            </form>
+
+        </section>
+
+        <section id="etapa-revisao" aria-labelledby="titulo-revisao" hidden>
+            <h3 id="titulo-revisao">Etapa 3: revise seu voto</h3>
+            <p id="resumo-voto" role="status" aria-live="polite"></p>
+            <p>O voto só será registrado depois que você selecionar “Confirmar voto”.</p>
+            <button id="confirmar-voto" type="button">Confirmar voto</button>
+            <button id="corrigir-voto" type="button">Corrigir chapa</button>
+            <button id="cancelar-votacao" type="button">Cancelar votação</button>
+        </section>
+
+        <section id="etapa-concluida" aria-labelledby="titulo-concluida" hidden>
+            <h3 id="titulo-concluida">Votação concluída</h3>
+            <p id="mensagem-conclusao" class="mensagem" role="status" aria-live="polite"></p>
+        </section>
+    </main>
+</body>
+</html>
