@@ -1,0 +1,12 @@
+{
+  "projeto": "Urna Eletrônica Escolar",
+  "repositorio": "isac7960226-design/urna_eletronica",
+  "branch": "main",
+  "pasta": "urna eletronica",
+  "arquivos": {
+    "html": "Urna_Escola.html",
+    "css": "Urna_Ecola.css",
+    "javascript": "Urna_Escolar.js",
+    "java": "Urna_Escola.java"
+  }
+}
