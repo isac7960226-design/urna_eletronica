@@ -1,0 +1,141 @@
+
+/* =========================================
+   URNA ELETRÔNICA ESCOLAR
+   Arquivo: Urna_Ecola.css
+   ========================================= */
+
+/* 1. Configurações gerais da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 30px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+/* 2. Painel principal da urna */
+.painel {
+    background-color: rgb(252, 253, 253);
+    max-width: 450px;
+    margin: 40px auto;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+
+    /* Sombra para destacar o painel */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* 3. Título principal */
+h1 {
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.ajuda {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.ajuda summary {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.ajuda li,
+.ajuda p {
+    margin-bottom: 8px;
+}
+
+/* 4. Organização do formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left;
+}
+
+/* 5. Textos dos campos */
+label {
+    font-weight: bold;
+    color: #333333;
+}
+
+/* 6. Campos de entrada de dados */
+input,
+select {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* 7. Destaque do campo selecionado */
+input:focus,
+select:focus {
+    outline: 2px solid #176b45;
+    border-color: #176b45;
+}
+
+/* 8. Botão de confirmação */
+button {
+    padding: 12px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+/* 9. Efeito ao passar o mouse no botão */
+button:hover {
+    background-color: #104b30;
+}
+
+/* 10. Área de mensagens */
+.mensagem {
+    font-weight: bold;
+    margin-top: 15px;
+    color: #176b45;
+    min-height: 1.2em;
+}
+
+.erro-campo {
+    margin: -6px 0 4px;
+    color: #a12622;
+    font-weight: bold;
+}
+
+input[aria-invalid="true"],
+select[aria-invalid="true"] {
+    border-color: #a12622;
+}
+
+/* 11. Ajustes para celulares */
+@media (max-width: 500px) {
+    body {
+        padding: 15px;
+    }
+
+    .painel {
+        margin: 20px auto;
+         padding: 20px;
+    }
+
+    button {
+        background-color: #28a745;
+        color: white;
+        font-size: 16px;
+    }
+     button:hover {
+        background: #218838;
+     }
+}
