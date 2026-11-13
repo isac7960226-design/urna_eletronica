@@ -1,0 +1,20 @@
+
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "Urna_Escola.html",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/Urna_Escola.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ]
+}
